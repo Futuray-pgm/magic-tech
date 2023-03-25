@@ -1,22 +1,22 @@
 print("magic_tech has loaded")
 
--- Magi Crystal
-minetest.register_craftitem("magic_tech:magicrystal", {
-	description = "Magicrystal",
-	inventory_image = "magic_tech_mineral_magicrystal.png"
+-- Crystal
+minetest.register_craftitem("magic_tech:crystal", {
+	description = "crystal",
+	inventory_image = "crystal.png"
 })
-minetest.register_node("magic_tech:stone_with_magicrystal", {
-	description = "Magi Crystal",
-	tiles = {"default_stone.png^magic_tech_mineral_magicrystal.png"},
+minetest.register_node("magic_tech:stone_with_crystal", {
+	description = "Crystal",
+	tiles = {"default_stone.png^crystal.png"},
 	groups = {cracky = 3},
-	drop = "magic_tech:magicrystal",
+	drop = "magic_tech:crystal",
 	sounds = default.node_sound_stone_defaults(),
 })
 
--- Starting out with the ore parameters for coal
+-- Ore parameters
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "magic_tech:stone_with_magicrystal",
+	ore            = "magic_tech:stone_with_crystal",
 	wherein        = "default:stone",
 	clust_scarcity = 8 * 8 * 8,
 	clust_num_ores = 9,
@@ -27,7 +27,7 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "magic_tech:stone_with_magicrystal",
+	ore            = "magic_tech:stone_with_crystal",
 	wherein        = "default:stone",
 	clust_scarcity = 8 * 8 * 8,
 	clust_num_ores = 8,
@@ -38,7 +38,7 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "magic_tech:stone_with_magicrystal",
+	ore            = "magic_tech:stone_with_crystal",
 	wherein        = "default:stone",
 	clust_scarcity = 12 * 12 * 12,
 	clust_num_ores = 30,
