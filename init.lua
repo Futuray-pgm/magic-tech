@@ -23,6 +23,25 @@ minetest.register_craftitem("magic_tech:actived_wand", {
 	inventory_image = "actived_wand.png"
 })
 
+-- Crafts
+minetest.register_craft({
+    type = "shaped",
+    output = "magic_tech:powerless_wand 1",
+    recipe = {
+        {"magic_tech:crystal"},
+        {"default:stick"}
+    }
+})
+minetest.register_craft({
+    type = "shaped",
+    output = "magic_tech:actived_wand 1",
+    recipe = {
+        {"", "default:mese_fragment", ""},
+        {"default:mese_fragment", "magic_tech:powerless_wand", "default:mese_fragment"},
+        {"", "default:mese_fragment", ""}
+    }
+})
+
 -- Ore parameters
 minetest.register_ore({
 	ore_type       = "scatter",
