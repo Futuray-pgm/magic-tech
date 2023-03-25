@@ -6,11 +6,21 @@ minetest.register_craftitem("magic_tech:crystal", {
 	inventory_image = "crystal.png"
 })
 minetest.register_node("magic_tech:stone_with_crystal", {
-	description = "Crystal",
+	description = "crystal ore",
 	tiles = {"default_stone.png^crystal.png"},
 	groups = {cracky = 3},
 	drop = "magic_tech:crystal",
 	sounds = default.node_sound_stone_defaults(),
+})
+
+-- Wand
+minetest.register_craftitem("magic_tech:powerless_wand", {
+	description = "powerless wand",
+	inventory_image = "powerless_wand.png"
+})
+minetest.register_craftitem("magic_tech:actived_wand", {
+	description = "actived wand",
+	inventory_image = "actived_wand.png"
 })
 
 -- Ore parameters
