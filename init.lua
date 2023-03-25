@@ -36,9 +36,9 @@ minetest.register_craft({
     type = "shaped",
     output = "magic_tech:actived_wand 1",
     recipe = {
-        {"", "default:mese_fragment", ""},
-        {"default:mese_fragment", "magic_tech:powerless_wand", "default:mese_fragment"},
-        {"", "default:mese_fragment", ""}
+        {"", "default:mese_crystal", ""},
+        {"default:mese_crystal", "magic_tech:powerless_wand", "default:mese_crystal"},
+        {"", "default:mese_crystal", ""}
     }
 })
 
