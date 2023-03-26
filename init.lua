@@ -7,12 +7,14 @@ powerless_wand.use = function(itemstack, user, pointed)
 		minetest.place_node(pointed_thing.under, "default:stone")
 	end
 	return 
+end
 activated_wand.use = function(itemstack, user, pointed)
 	local pointed_node = minetest.get_node(pointed_thing.under)
 	if pointed_node == "default:stone" then
 		minetest.place_node(pointed_thing.under, "magic_tech:infested_stone")
 	end
 	return 
+end
 
 -- Crystal
 minetest.register_craftitem("magic_tech:crystal", {
