@@ -48,7 +48,7 @@ minetest.register_tool("magic_tech:activated_wand", {
 -- Other
 minetest.register_node("magic_tech:infested_stone", {
 	description = "infested stone",
-	tiles = {"default_stone.png^infested.png"},
+	tiles = {"default_stone.png^infested_node.png"},
 	groups = {cracky = 1},
 	drop = "magic_tech:infested_stone",
 	sounds = default.node_sound_stone_defaults(),
