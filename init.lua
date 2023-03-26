@@ -13,7 +13,7 @@ powerless_wand.use = function(itemstack, user, pointed)
 end
 activated_wand.use = function(itemstack, user, pointed)
 	local pointed_node = minetest.get_node(pointed.under)
-	minetest.chat_send_all(pointed_node)
+	minetest.chat_send_all(pointed_node[0])
 	if pointed_node == "default:stone" then
 		minetest.place_node(pointed_thing.under, "magic_tech:infested_stone")
 	end
