@@ -1,5 +1,8 @@
 print("magic_tech has loaded")
 
+powerless_wand = {}
+activated_wand = {}
+
 -- Functions
 powerless_wand.use = function(itemstack, user, pointed)
 	local pointed_node = minetest.get_node(pointed_thing.under)
