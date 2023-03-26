@@ -14,13 +14,21 @@ minetest.register_node("magic_tech:stone_with_crystal", {
 })
 
 -- Wand
-minetest.register_craftitem("magic_tech:powerless_wand", {
+minetest.register_tool("magic_tech:powerless_wand", {
 	description = "powerless wand",
-	inventory_image = "powerless_wand.png"
+	inventory_image = "powerless_wand.png",
+	on_place = function(itemstack, user, pointed)
+		powerless_wand.use(itemstack, user, pointed)
+		return
+	end,
 })
-minetest.register_craftitem("magic_tech:actived_wand", {
-	description = "actived wand",
-	inventory_image = "actived_wand.png"
+minetest.register_tool("magic_tech:activated_wand", {
+	description = "activated wand",
+	inventory_image = "activated_wand.png",
+	on_place = function(itemstack, user, pointed)
+		activated_wand.use(itemstack, user, pointed)
+		return
+	end,
 })
 
 -- Crafts
@@ -29,12 +37,12 @@ minetest.register_craft({
     output = "magic_tech:powerless_wand 1",
     recipe = {
         {"magic_tech:crystal"},
-        {"default:stick"}
+        {"group:stick"}
     }
 })
 minetest.register_craft({
     type = "shaped",
-    output = "magic_tech:actived_wand 1",
+    output = "magic_tech:activated 1",
     recipe = {
         {"", "default:mese_crystal", ""},
         {"default:mese_crystal", "magic_tech:powerless_wand", "default:mese_crystal"},
