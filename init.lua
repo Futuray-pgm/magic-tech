@@ -1,5 +1,19 @@
 print("magic_tech has loaded")
 
+-- Functions
+powerless_wand.use = function(itemstack, user, pointed)
+	local pointed_node = minetest.get_node(pointed_thing.under)
+	if pointed_node == "magic_tech:infested_stone" then
+		minetest.place_node(pointed_thing.under, "default:stone")
+	end
+	return 
+activated_wand.use = function(itemstack, user, pointed)
+	local pointed_node = minetest.get_node(pointed_thing.under)
+	if pointed_node == "default:stone" then
+		minetest.place_node(pointed_thing.under, "magic_tech:infested_stone")
+	end
+	return 
+
 -- Crystal
 minetest.register_craftitem("magic_tech:crystal", {
 	description = "crystal",
@@ -19,7 +33,7 @@ minetest.register_tool("magic_tech:powerless_wand", {
 	inventory_image = "powerless_wand.png",
 	on_place = function(itemstack, user, pointed)
 		powerless_wand.use(itemstack, user, pointed)
-		return
+		return itemstack
 	end,
 })
 minetest.register_tool("magic_tech:activated_wand", {
@@ -29,6 +43,15 @@ minetest.register_tool("magic_tech:activated_wand", {
 		activated_wand.use(itemstack, user, pointed)
 		return
 	end,
+})
+
+-- Other
+minetest.register_node("magic_tech:infested_stone", {
+	description = "infested stone",
+	tiles = {"default_stone.png^infested.png"},
+	groups = {cracky = 1},
+	drop = "magic_tech:infested_stone",
+	sounds = default.node_sound_stone_defaults(),
 })
 
 -- Crafts
@@ -42,7 +65,7 @@ minetest.register_craft({
 })
 minetest.register_craft({
     type = "shaped",
-    output = "magic_tech:activated 1",
+    output = "magic_tech:activated_wand 1",
     recipe = {
         {"", "default:mese_crystal", ""},
         {"default:mese_crystal", "magic_tech:powerless_wand", "default:mese_crystal"},
