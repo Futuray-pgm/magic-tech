@@ -1,3 +1,6 @@
+get_modpath("magic_tech")
+local storage = dofile(path .. "/machines.lua")
+
 print("magic_tech has loaded")
 
 powerless_wand = {}
