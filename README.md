@@ -1,6 +1,9 @@
 # magic-tech
 A minetest mod focused on magic based technology.
 
+- On contentDB : _[https://content.minetest.net/packages/Futuray-pgm/magic_tech/](https://content.minetest.net/packages/Futuray-pgm/magic_tech/)_
+- On Internet : _[https://futuray-pgm.github.io/magic-tech-website/](https://futuray-pgm.github.io/magic-tech-website/)_
+
 It's just a little project. Thank to **[QuoteNat](https://github.com/QuoteNat/)** for the **[original idea](https://github.com/QuoteNat/magic-tech)**.
 
 ---
