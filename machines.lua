@@ -4,17 +4,13 @@ minetest.register_node("magic_tech:structure_node", {
 	groups = {oddly_breakable_by_hand = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
-
-minetest.register_node("magic_tech:water_purifier", {
-	description = "water purifier",
-	tiles = {
-        "structure_node.png",    -- up
-        "structure_node.png",  -- down
-        "structure_node.png", -- right
-        "structure_node.png",  -- left
-        "machine_output.png",  -- back
-        "water_purifier_0.png", -- front
-    },
-	groups = {oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_stone_defaults(),
+minetest.register_craft({
+    type = "shaped",
+    output = "magic_tech:structure_node 2",
+    recipe = {
+        {"magic_tech:crystal", "group:infested"},
+        {"group:infested", "group:infested"}
+    }
 })
+
+dofile(path .. "/scripts/water_purifier.lua")
